@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 import time 
 import pandas as pd
 import io
-encoding='UTF-8'
+encoding = 'UTF-8'
 archivo_datos=io.open("archivo.txt","w",encoding=encoding)
 #Opciones de navegacion
 
@@ -53,14 +53,13 @@ WebDriverWait(driver, 5)\
 
 
 texto = driver.find_element_by_xpath("//table[@class='coupon coupon-horizontal coupon-scoreboard ']")
-print(texto)
+#print(texto)
 texto = texto.text
-print(texto)
+print("texto es:\n")
+#print(texto)
 dic = dict()
 equipo = 0
-partidos = texto.split('Mar')
-partidos.pop(0)
-
+partidos2 = texto.split('>')
 equipo1 = list()
 equipo1_valor = list()
 
@@ -68,29 +67,33 @@ empate_valor = list()
 
 equipo2 = list()
 equipo2_valor = list()
+dia_partido = list()
+hora_partido = list()
+#Primer equipo tiene una estructura diferente
+primer_partido = partidos2[0].split('\n')
+hora_partido.append(primer_partido[1])
+dia_partido.append(primer_partido[2])
+equipo1.append(primer_partido[4])
+equipo1_valor.append(primer_partido[5])
+equipo2.append(primer_partido[9])
+equipo2_valor.append(primer_partido[10])
+empate_valor.append(primer_partido[7])
 
-for i in partidos:
-    val = i.split("\n")
-    equipo +=1
-    new_dic = {}
-    new_dic[val[2]] = val[3]
-    new_dic[val[4]] = val[5]
-    new_dic[val[7]] = val[8]
-
-    equipo1.append(val[2])
-    equipo1_valor.append(val[3])
-    empate_valor.append(val[5])
-    equipo2.append(val[7])
-    equipo2_valor.append(val[8])
-    
-    #archivo_datos.write("{}-{}[[{}-{}[[{}-{}\n".format(val[2],val[3],val[4],val[5],val[7],val[8]))
-    
-    dic[str(equipo)] = new_dic
-df = pd.DataFrame({'equipo1': equipo1, 'valor_eq1': equipo1_valor, 'valor_empate':empate_valor,'equipo2': equipo2, 'valor_eq2': equipo2_valor })
+partidos2.pop(0)
+for i in partidos2:
+    print(i)
+    val = i.split('\n')
+    print("el valor es\n ",val)
+    if len(val) > 7:
+        hora_partido.append(val[3])
+        dia_partido.append(val[4])
+        equipo1.append(val[6])
+        equipo1_valor.append(val[7])
+        empate_valor.append(val[9])
+        equipo2.append(val[11])
+        equipo2_valor.append(val[12])
+df = pd.DataFrame({'equipo1': equipo1, 'valor_eq1': equipo1_valor, 'valor_empate':empate_valor,'equipo2': equipo2, 'valor_eq2': equipo2_valor, 'dia_partido':dia_partido,'hora_partido':hora_partido})
 
 print(df)
-df.to_csv('tiempo_hoy.csv', index=False)
-
-archivo_datos.write(str(dic))
+df.to_csv('partidos.csv', index=False)
 driver.quit()
-
