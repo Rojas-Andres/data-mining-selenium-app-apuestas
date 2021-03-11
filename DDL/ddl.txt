@@ -1,0 +1,45 @@
+
+-- Crear tabla equipos 
+create table public.equipos(
+id_equipo numeric(12) ,
+nom_equipo varchar(60) primary key 
+)
+
+
+
+--Crear tabla meses 
+create table public.meses(
+id_mes numeric(2) primary key,
+nom_mes_abr varchar(12) ,
+nom_mes varchar(12),
+cod_mes varchar(12)
+)
+
+-- Insertar tabla meses 
+insert into public.meses (id_mes,nom_mes_abr,nom_mes,cod_mes)
+values
+(1,'Ene','Enero','01'),
+(2,'Feb','Febrero','02'),
+(3,'Mar','Marzo','03'),
+(4,'Abr','Abril','04'),
+(5,'May','Mayo','05'),
+(6,'Jun','Junio','06'),
+(7,'Jul','Julio','07'),
+(8,'Ago','Agosto','08'),
+(9,'Sep','Septiembre','09'),
+(10,'Oct','Octubre','10'),
+(11,'Nov','Noviembre','11'),
+(12,'Dic','Diciembre','12')
+
+
+-- Crear tabla partidos
+create table public.partidos (
+ equipo1 numeric(12),
+ valor_eq1 numeric(12,3),
+ valor_empate numeric(12,3),
+ equipo2 numeric(12),
+ valor_eq2 numeric(12,3),
+ dia_partido date,
+ hora_partido varchar(6),
+ unique (equipo1,equipo2,dia_partido,hora_partido)
+)
