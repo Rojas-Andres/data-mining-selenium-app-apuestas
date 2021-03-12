@@ -3,38 +3,38 @@ WARNING:  no libwebkitgtk-1.0 detected, some features will be unavailable
     Consider installing the package with apt-get or yum.
     e.g. 'sudo apt-get install libwebkitgtk-1.0-0'
 #######################################################################
-08:35:35,268 INFO  [KarafBoot] Checking to see if org.pentaho.clean.karaf.cache is enabled
-08:35:41,441 INFO  [KarafInstance] 
+11:45:59,635 INFO  [KarafBoot] Checking to see if org.pentaho.clean.karaf.cache is enabled
+11:46:05,827 INFO  [KarafInstance] 
 *******************************************************************************
 *** Karaf Instance Number: 2 at /mnt/c/pentaho-server-ce-7.1.0.0-12/pdi-ce- ***
 ***   9.0.0.0-423/data-integration/./system/karaf/caches/kitchen/data-1     ***
 *** Karaf Port:8803                                                         ***
 *** OSGI Service Port:9052                                                  ***
 *******************************************************************************
-2021/03/12 08:35:44 - Kitchen - Logging is at level : Basic
-2021/03/12 08:35:44 - Kitchen - Start of run.
-08:35:49,636 INFO  [DriverManager] Installing driver kars.
-08:35:49,641 INFO  [DriverManager] 0 drivers will be installed.
-08:35:49,642 INFO  [DriverManager] Finished installing drivers kars.
-2021/03/12 08:35:55 - job_bd - Start of job execution
-2021/03/12 08:35:55 - Carte - Installing timer to purge stale objects after 1440 minutes.
-2021/03/12 08:35:55 - job_bd - Starting entry [Trans_BD]
-2021/03/12 08:35:55 - Trans_BD - Using run configuration [Pentaho local]
-2021/03/12 08:35:55 - Trans_BD - Running transformation using the Kettle execution engine
-2021/03/12 08:35:55 - trans1 - Dispatching started for transformation [trans1]
-2021/03/12 08:35:55 - Table output.0 - Connected to database [conexion_postgres] (commit=1000)
-2021/03/12 08:35:56 - CSV file input.0 - Header row skipped in file 'file:///mnt/d/ASUS/Documents/PROYECTOS/selenium/partidos.csv'
-2021/03/12 08:35:56 - CSV file input.0 - Finished processing (I=11, O=0, R=0, W=10, U=0, E=0)
-2021/03/12 08:35:56 - Table output.0 - Finished processing (I=0, O=10, R=10, W=10, U=0, E=0)
-2021/03/12 08:35:56 - job_bd - Starting entry [Ejecutar procedimiento almacenado]
-2021/03/12 08:35:56 - Ejecutar procedimiento almacenado - Using run configuration [Pentaho local]
-2021/03/12 08:35:56 - Ejecutar procedimiento almacenado - Running transformation using the Kettle execution engine
-2021/03/12 08:35:56 - trans2 - Dispatching started for transformation [trans2]
-2021/03/12 08:35:56 - Execute SQL script.0 - Finished reading query, closing connection.
-2021/03/12 08:35:56 - Execute SQL script.0 - Finished processing (I=0, O=0, R=0, W=1, U=0, E=0)
-2021/03/12 08:35:56 - job_bd - Finished job entry [Ejecutar procedimiento almacenado] (result=[true])
-2021/03/12 08:35:56 - job_bd - Finished job entry [Trans_BD] (result=[true])
-2021/03/12 08:35:56 - job_bd - Job execution finished
-2021/03/12 08:35:56 - Kitchen - Finished!
-2021/03/12 08:35:56 - Kitchen - Start=2021/03/12 08:35:44.047, Stop=2021/03/12 08:35:56.297
-2021/03/12 08:35:56 - Kitchen - Processing ended after 12 seconds.
+2021/03/12 11:46:08 - Kitchen - Logging is at level : Basic
+2021/03/12 11:46:08 - Kitchen - Start of run.
+11:46:16,226 INFO  [DriverManager] Installing driver kars.
+11:46:16,232 INFO  [DriverManager] 0 drivers will be installed.
+11:46:16,233 INFO  [DriverManager] Finished installing drivers kars.
+2021/03/12 11:46:22 - job_bd - Start of job execution
+2021/03/12 11:46:23 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2021/03/12 11:46:23 - job_bd - Starting entry [Trans_BD]
+2021/03/12 11:46:23 - Trans_BD - Using run configuration [Pentaho local]
+2021/03/12 11:46:23 - Trans_BD - Running transformation using the Kettle execution engine
+2021/03/12 11:46:23 - trans1 - Dispatching started for transformation [trans1]
+2021/03/12 11:46:23 - Table output.0 - Connected to database [conexion_postgres] (commit=1000)
+2021/03/12 11:46:23 - CSV file input.0 - Header row skipped in file 'file:///mnt/d/ASUS/Documents/PROYECTOS/selenium/partidos.csv'
+2021/03/12 11:46:23 - CSV file input.0 - Finished processing (I=2, O=0, R=0, W=1, U=0, E=0)
+2021/03/12 11:46:23 - Table output.0 - Finished processing (I=0, O=1, R=1, W=1, U=0, E=0)
+2021/03/12 11:46:23 - job_bd - Starting entry [Ejecutar procedimiento almacenado]
+2021/03/12 11:46:23 - Ejecutar procedimiento almacenado - Using run configuration [Pentaho local]
+2021/03/12 11:46:23 - Ejecutar procedimiento almacenado - Running transformation using the Kettle execution engine
+2021/03/12 11:46:23 - trans2 - Dispatching started for transformation [trans2]
+2021/03/12 11:46:24 - Execute SQL script.0 - Finished reading query, closing connection.
+2021/03/12 11:46:24 - Execute SQL script.0 - Finished processing (I=0, O=0, R=0, W=1, U=0, E=0)
+2021/03/12 11:46:24 - job_bd - Finished job entry [Ejecutar procedimiento almacenado] (result=[true])
+2021/03/12 11:46:24 - job_bd - Finished job entry [Trans_BD] (result=[true])
+2021/03/12 11:46:24 - job_bd - Job execution finished
+2021/03/12 11:46:24 - Kitchen - Finished!
+2021/03/12 11:46:24 - Kitchen - Start=2021/03/12 11:46:08.871, Stop=2021/03/12 11:46:24.129
+2021/03/12 11:46:24 - Kitchen - Processing ended after 15 seconds.

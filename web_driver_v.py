@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 import time 
 import pandas as pd
 import io
+import os 
 encoding = 'UTF-8'
 archivo_datos=io.open("archivo.txt","w",encoding=encoding)
 #Opciones de navegacion
@@ -13,8 +14,9 @@ options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
-
-driver_path = "D:\ASUS\Documents\PROYECTOS\selenium\chromedriver.exe"
+ruta = os.getcwd()
+ 
+driver_path = "{}/chromedriver.exe".format(ruta)
 
 driver = webdriver.Chrome(driver_path,chrome_options=options)
 
